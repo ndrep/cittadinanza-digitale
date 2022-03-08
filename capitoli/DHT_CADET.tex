@@ -1,0 +1,17 @@
+\chapter{Routing e protocolli}
+In \textbf{GNUnet} il livello di trasporto dello stack e l'instradamento dei pacchetti vengono modificati con l'obiettivo di garantire la \textbf{decentralizzazione} così da impedire la manipolazione del traffico di rete; il tutto grazie anche alla differente gestione delle comunicazioni analizzata nel capitolo precedente.\\
+L'instradamento dei pacchetti è basato sull'utilizzo di \textbf{DHT}(\textit{Distributed Hash Tables}). Le \textit{DHT} sono una classe di sistemi decentralizzati che partizionano l'appartenenza di un set di chiavi tra i nodi partecipanti di una rete in cui è possibile inoltrare in maniera efficiente i messaggi all'unico proprietario di una chiave. L'instradamento di un messaggio avviene per mezzo di \textit{algoritmi greedy} attraverso cui può essere identificato il destinatario di un determinato messaggio.\\
+Una \textit{DHT} contiene delle coppie \textbf{chiave-valore} che indicano i nodi vicini ad un determinato nodo; la creazione della \textit{DHT} nel caso di \textbf{GNUnet} viene effettuata mediante l'utilizzo di un algoritmo di routing chiamato $R^5N$\cite{R5N}. $R^5N$ consente alla \textit{DHT} di operare efficacemente sulla rete aumentando la sicurezza rispetto ad altri algoritmi esistenti.\\
+Il livello di trasporto in \textbf{GNUnet} è affidato a \textbf{CADET}(\textit{Confidential Ad-hoc Decentralized End-to-end Transport}), ovvero un protocollo di trasporto per il trasferimento di dati riservati e autenticati in reti decentralizzate.\cite{cadet} Questo tipo di protocollo è stato progettato per funzionare in reti \textit{wireless} costruite \textit{ad hoc}. \textbf{CADET} attualmente risulta essere significativamente più lento rispetto all'attuale \textit{stack TCP/IP} in reti ad alta velocità e bassa latenza, ma per quanto riguarda l'utilizzo tipo di Internet mostra buone prestazioni con un livello di sicurezza decisamente superiori rispetto a quest'ultimo. Da un punto di vista implementativo \textbf{CADET} è strutturato in livelli:
+\begin{itemize}
+    \item un livello è dedicato alla comunicazione tra due \textit{end-point}. Durante la prima fase, attraverso il supporto di una \textit{censorship-resistant DHT}\footnote{i nodi malevoli non possono interferire nella fase di \textit{lookup}.}, \textbf{CADET} avvia un processo di \textit{path discovery} trovando una \textit{route} tra due nodi che vogliono comunicare. Successivamente il mittente chiede ad ogni \textit{peer} individuato nel \textit{path} di aprire una connessione con il \textit{peer} successivo in modo da creare una catena di connessioni che termina con il \textit{peer} destinatario.
+    \item un livello si occupa della \textbf{crittografia end-to-end} implementata attraverso l'utilizzo di \textbf{protocolli di tunneling}.
+    È possibile utilizzare una \textit{censorship-resistant DHT} per determinare una serie di percorsi ridondanti verso una destinazione e stabilire un tunnel (crittografato) tramite connessioni ridondanti.
+    Questi tunnel possono essere utilizzati per creare canali di comunicazione simili a \textbf{Stream Control Transmission Protocol} (SCTP)\footnote{SCTP è un protocollo che svolge le funzioni del livello di trasporto (come TCP o UDP) appoggiandosi ad un servizio di rete a pacchetto come IP.}.\cite{tunnel}.
+    \item un ultima fase è dedicata al controllo del traffico e del multiplexing e, sostanzialmente, ha come obiettivo quello di sostituire \textbf{TCP/UDP}.
+    
+    
+    
+    
+\end{itemize}
+

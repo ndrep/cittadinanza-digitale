@@ -1,30 +1,34 @@
 \chapter{Livello 0 [\emph{La Rete}]}
-Internet è una \textbf{rete digitale di trasporto dati} che serve a portare grosse quantità di informazioni a velocità molto elevate. Il funzionamento si basa sulla trasmissione di blocchi di dati, chiamati \textbf{pacchetti}, che vengono ordinati in sequenze che formano \textbf{flussi di dati} usufruibili dagli utenti.
+Il livello 0 si concentra sull'analisi della rete Internet; definisce gli \textbf{aspetti strutturali} introducendo concetti fondamentali come \textbf{relatività} e il \textbf{principio di Locard digitale}.
+
+Internet è una \textbf{rete digitale di trasporto dati} che serve a portare grosse quantità di informazioni a velocità molto elevate. Il funzionamento si basa sulla trasmissione di blocchi di dati, chiamati \textbf{pacchetti}, che vengono ordinati in sequenze che formano \textbf{flussi di dati} usufruibili dagli utenti e che vengono scambiati dai nodi della rete. L'instradamento dei pacchetti tra i nodi (\textbf{router}) della rete avviene mediante l'applicazione di \textbf{politiche di routing}, che vengono gestite direttamente dal possessore del router. Lo politiche di routing hanno come obiettivo quello di instradare i pacchetti nel modo più efficiente possibile cercando di velocizzare la trasmissione dei dati e minimizzando i costi di trasmissione.
 \bigbreak
 Uno dei princìpi della Rete che può essere associato alla Cittadinanza Digitale prende il nome di \textbf{relatività}. Preso direttamente dal mondo della Fisica, afferma che: \textbf{non possono esistere due osservatori che vedono la Rete allo stesso modo.}
 Alcuni esempi possono essere:
 \begin{itemize}
     \item \textbf{Domain Name System}: i provider nazionali, durante la risoluzione dei DNS di siti considerati illegali su territorio nazionale, sono obbligati a fornire indirizzi IP sbagliati in modo da non consentirne l'accesso,
     \item \textbf{Firewall}: il traffico dati viene bloccato a seconda della tipologia di protocollo utilizzato. Un esempio significativo è rappresentato dal \emph{Great Firewall} cinese\footnote{\url{https://it.wikipedia.org/wiki/Great_Firewall}},
-    \item \textbf{Velocità}: i provider possono applicare una specifica tariffa a seconda della velocità del traffico della rete privilegiando gli utenti che sono disposti a pagare di più,
+    \item \textbf{Velocità}: i provider possono applicare una specifica tariffa a seconda della velocità del traffico della rete privilegiando gli utenti che sono disposti a pagare di più.
 \end{itemize}
 \bigbreak
-Oggigiorno le tecnologie permettono la \textbf{memorizzazione di grandi quantità di dati} per tempi pressoché infiniti. Da diversi anni multinazionali e governi, con la scusa della lotta al terrorismo, sono riusciti ad allungare a dismisura i \textbf{tempi di conservazione dei dati raccolti}.
+Alcuni paesi come Cina, India e Corea del Nord sono solo alcuni esempi di paesi dove il potere politico evidenzia in maniera importante il concetto di relatività e distorsione della rete. In Italia questo problema esiste, anche se limitato; poiché i DNS svolgono un ruolo fondamentale nella censura di siti considerati illegali nel territorio italiano.
+\bigbreak
+Il \textbf{Principio di Locard} afferma che:\emph{ un' informazione immessa nella rete lascia sempre tracce, tutt’altro che esigue e indistruttibili.} Ogni individuo che interagisce con la rete lascia delle tracce che, attraverso strumenti sofisticati, possono essere indistruttibili e durevoli nel tempo. L'informazione digitale è facilmente \textbf{forgiabile} e \textbf{manipolabile} rappresentando così uno strumento particolarmente delicato da gestire. Oggigiorno le tecnologie permettono la \textbf{memorizzazione di grandi quantità di dati} per tempi pressoché infiniti. Da diversi anni multinazionali e governi, con la scusa della lotta al terrorismo, sono riusciti ad allungare a dismisura i \textbf{tempi di conservazione dei dati raccolti}.
 \bigbreak
 L'incredibile valore che hanno assunto i dati nel corso del XXI secolo è dettato dalle innumerevoli forme di utilizzo, come:
 \begin{itemize}
-    \item \textbf{Personalizzazione dei servizi}: profilare gli utenti consente alle aziende di offrire un servizio su misura per ogni utente,
+    \item \textbf{Personalizzazione dei servizi}: profilare gli utenti consente alle aziende di offrire un servizio su misura,
     \item \textbf{Analisi di mercato}: i dati possono essere analizzati anticipando le nuove esigenze di mercato,
-    \item \textbf{Manipolazioni politiche}: è possibile mostrare agli utenti contenuti \emph{ad hoc} in modo da influenzare le loro convinzioni politiche,
+    \item \textbf{Manipolazioni politiche}: è possibile mostrare agli utenti contenuti \emph{ad hoc} in modo da influenzare le loro convinzioni politiche.
 \end{itemize}
 
 \bigbreak
-Purtroppo Internet è stata progettata da "\emph{ingenui}"; coloro che hanno creato questa rete non ne hanno immaginato un uso così \textbf{distorto}.
-La maggior parte dei \textbf{protocolli di comunicazione} sicura, vale a dire crittografata, utilizzati su Internet basano la propria sicurezza su \textbf{certificati crittografici a chiave pubblica} emessi secondo lo standard X.509 e gestiti per mezzo di una \emph{PKI} globale.
-In generale questo tipo di architettura è debole in quanto costringe i fruitori del servizio a fidarsi incondizionatamente delle organizzazione che rilasciano tali certificati.
+Si potrebbe affermare che Internet sia stata progettata da "\emph{ingenui}"; coloro che hanno creato questa rete non ne hanno immaginato un uso così \textbf{distorto}.
+La maggior parte dei \textbf{protocolli di comunicazione} sicura(vale a dire crittografata) utilizzati su Internet basano la propria sicurezza su \textbf{certificati crittografici a chiave pubblica} emessi secondo lo standard X.509 e gestiti per mezzo di una \emph{PKI} globale.
+In generale questo tipo di architettura è debole in quanto costringe i fruitori del servizio a fidarsi incondizionatamente delle organizzazioni che rilasciano tali certificati.
 
 Una possibile soluzione sarebbe stata quella di progettare il protocollo IP includendo sin da subito l'utilizzo della crittografia, ma tale idea fu abbandonata a causa delle pressioni esercitate dal governo statunitense.
 \bigbreak
-GNUnet\footnote{\url{https://www.gnunet.org/en/}} è uno stack di protocolli di rete per la creazione di applicazioni sicure, distribuite e che preservano la privacy, il cui obiettivo è quello di sostituire il vecchio stack di protocolli dell'attuale Internet.
+Un'altra soluzione è rappresentata da GNUnet\footnote{\url{https://www.gnunet.org/en/}}; uno stack di protocolli di rete per la creazione di applicazioni sicure, distribuite e che preservano la privacy, il cui obiettivo è quello di sostituire il vecchio stack di protocolli dell'attuale Internet.
 
 Questa tecnologia si basa sul fatto che  ogni nodo si connette direttamente con il maggior numero di altri nodi e collabora per instradare efficientemente i pacchetti, \textbf{senza che sia necessario conoscere la destinazione finale o il contenuto dei pacchetti stessi, metadati compresi}.
